@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS variables */
+:root {
+  --background: #ffffff;
+  --foreground: #0F1724;
+  --brand-primary: #FF6B6B; /* Vivid Coral */
+  --brand-accent: #FFD166;  /* Warm Gold */
+  --brand-cta: #2B2D42;     /* Deep Ink */
+  --brand-cream: #FFF8EE;   /* Soft cream */
+  --brand-card: #F3F4F6;    /* Light neutral */
+  --success: #8FD694;       /* Fresh green */
+}
+
+/* Dark mode is opt-in via the `dark` class on the <html> or <body> element.
+   This prevents automatic system-level dark mode from forcing a black background.
+*/
+.dark :root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), 'Inter', 'Arial', sans-serif;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', 'Georgia', serif;
+}
+
+.text-gold {
+  color: #bfa76f;
+}
+
+.bg-cream {
+  background: #f8f6f2;
+}
+
+/* Soft shadow utility */
+.shadow-lg {
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+}
+
+/* Animations */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-in {
+  animation: fade-in 1s cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes fade-in-down {
+  from { opacity: 0; transform: translateY(-16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-down {
+  animation: fade-in-down 0.7s cubic-bezier(0.4,0,0.2,1);
+}
